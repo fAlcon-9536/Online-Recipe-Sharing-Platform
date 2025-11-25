@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Details | RecipePlatform</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .details-card {
+      max-width: 350px;
+      margin: 2.8em auto 1.25em auto;
+      background: #fffdfa;
+      border-radius: 24px;
+      box-shadow: 0 6px 38px rgba(227,93,106,0.14), 0 1.5px 1.7px #f5cfd4;
+      padding: 1.3em 1.2em .9em 1.2em;
+      text-align: center;
+      animation: fadeIn 0.5s;
+    }
+    .details-header {
+      color: #d62d63;
+      font-size: 1.22em;
+      font-weight: 700;
+      margin-bottom: 0.21em;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .details-img {
+      width: 160px;
+      height: 105px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 1.12em auto 1em auto;
+      box-shadow: 0 2px 18px #e35d6a18;
+      display: block;
+    }
+    .details-author {
+      color: #a45076;
+      font-size: 1.01em;
+      font-weight: 600;
+      margin-bottom: 0.47em;
+      letter-spacing: 0.2px;
+    }
+    .details-desc {
+      font-size: 1em;
+      color: #6a498c;
+      margin-bottom: 0.87em;
+    }
+    .details-section-title {
+      color: #cf2876;
+      font-size: 1.05em;
+      margin-top: 1em;
+      margin-bottom: 0.45em;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-align: left;
+      margin-left: 0.18em;
+    }
+    .details-list {
+      text-align: left;
+      margin-left: 1.18em;
+      color: #812d69;
+      font-size: .97em;
+      margin-bottom: 0.97em;
+    }
+    .details-steps {
+      text-align: left;
+      margin-left: 1.18em;
+      color: #773565;
+      font-size: .97em;
+      margin-bottom: 1em;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(28px);}
+      to   { opacity: 1; transform: none;}
+    }
+    @media (max-width: 550px) {
+      .details-card { max-width: 96vw; padding: 1.1em .15em;}
+      .details-img { width: 98vw; max-width: 170px; height: 85px;}
+      .details-header { font-size: 1.1em;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><i class="fa fa-bowl-food"></i> RecipePlatform</div>
+      <ul class="nav-links">
+        <li class="nav-box"><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li class="nav-box"><a href="index.jsp"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="nav-box"><a href="submit_recipe.html"><i class="fa-solid fa-plus"></i> Add Recipe</a></li>
+        <li class="nav-box"><a href="recipe_list.html"><i class="fa-solid fa-list"></i> All Recipes</a></li>
+        <li class="nav-box"><a href="view_favorites.html"><i class="fa fa-heart"></i> Favorites</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <a href="javascript:window.history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <div id="recipe-details"></div>
+    <script>
+      const recipes = {
+        sushi: {
+          name: "Classic Sushi Rolls",
+          author: "Sushi Master",
+          image: "assets/images/Sushi.jpg",
+          desc: "Vinegared rice with fresh fish or veggies, rolled with care.",
+          ingredients: [
+            "2 cups sushi rice",
+            "Nori sheets",
+            "Fresh salmon or tuna, sliced",
+            "Cucumber or avocado, sliced",
+            "Soy sauce",
+            "Wasabi paste"
+          ],
+          steps: [
+            "Rinse and cook sushi rice as per package.",
+            "Spread rice on nori sheet; add fish and veggies.",
+            "Roll gently and cut into pieces.",
+            "Serve with soy sauce and wasabi."
+          ]
+        },
+        padthai: {
+          name: "Pad Thai",
+          author: "Somchai Wong",
+          image: "assets/images/Pad Thai.JPG",
+          desc: "Thailand's iconic stir-fried noodle dish with shrimp, peanuts, and lime.",
+          ingredients: [
+            "200g rice noodles",
+            "2 eggs",
+            "1 cup shrimp, peeled",
+            "2 tbsp tamarind paste",
+            "1 tbsp fish sauce",
+            "2 tbsp peanuts, crushed",
+            "Bean sprouts, lime, green onion"
+          ],
+          steps: [
+            "Soak noodles in hot water till soft; drain.",
+            "Stir fry shrimp and vegetables.",
+            "Add eggs, scramble lightly.",
+            "Add noodles, sauces, lime, and peanuts.",
+            "Stir fry and serve hot."
+          ]
+        },
+        tikka: {
+          name: "Chicken Tikka Masala",
+          author: "Chef Ajay",
+          image: "assets/images/ChickenTikkaMasala.jpeg",
+          desc: "Tender marinated chicken in creamy spiced tomato sauce.",
+          ingredients: [
+            "500g boneless chicken",
+            "2 tbsp yogurt",
+            "2 tbsp tikka masala paste",
+            "200g tomato puree",
+            "1 onion, chopped",
+            "100ml cream",
+            "Spices: cumin, coriander, garam masala"
+          ],
+          steps: [
+            "Marinate chicken in yogurt and masala 1 hr.",
+            "Grill or pan fry chicken pieces.",
+            "Fry onions; add tomato puree & spices.",
+            "Add chicken, simmer briefly, finish with cream."
+          ]
+        },
+        pizza: {
+          name: "Margherita Pizza",
+          author: "Luigi Romano",
+          image: "assets/images/Pizza.jpg",
+          desc: "Classic Italian pizza with tomato, mozzarella, and basil.",
+          ingredients: [
+            "Pizza dough",
+            "3 tbsp tomato sauce",
+            "200g mozzarella cheese",
+            "Fresh basil leaves",
+            "Olive oil"
+          ],
+          steps: [
+            "Roll out dough, spread with sauce.",
+            "Top with mozzarella and basil.",
+            "Bake at 250°C for 12 minutes.",
+            "Drizzle olive oil and serve."
+          ]
+        },
+        banhmi: {
+          name: "Banh Mi Sandwich",
+          author: "Mai Phan",
+          image: "assets/images/Banh Mi.jpg",
+          desc: "Vietnamese sandwich filled with pork, veggies, and herbs.",
+          ingredients: [
+            "Baguette",
+            "Grilled pork, sliced",
+            "Pickled carrot & daikon",
+            "Cucumber, sliced",
+            "Cilantro and mint",
+            "Chili sauce or mayo"
+          ],
+          steps: [
+            "Slice baguette, spread chili sauce/mayo.",
+            "Layer with pork, pickled veggies, cucumber, herbs.",
+            "Serve fresh."
+          ]
+        },
+        ramen: {
+          name: "Japanese Ramen",
+          author: "Hiro Tanaka",
+          image: "assets/images/Ramen.jpg",
+          desc: "Noodles in rich broth with pork, eggs, and toppings.",
+          ingredients: [
+            "200g ramen noodles",
+            "Pork belly slices",
+            "2 eggs, boiled and halved",
+            "4 cups pork or chicken broth",
+            "Nori sheets, green onion, bean sprouts"
+          ],
+          steps: [
+            "Prepare broth with pork/chicken and soy.",
+            "Boil noodles and eggs.",
+            "Assemble bowls with noodles, toppings, hot broth."
+          ]
+        },
+        pho: {
+          name: "Vietnamese Pho",
+          author: "Thanh Nguyen",
+          image: "assets/images/Pho.jpg",
+          desc: "Traditional noodle soup with beef in aromatic broth.",
+          ingredients: [
+            "Rice noodles",
+            "200g beef, thinly sliced",
+            "8 cups beef broth",
+            "Star anise, ginger, onion",
+            "Bean sprouts, basil, lime"
+          ],
+          steps: [
+            "Simmer broth with spices.",
+            "Cook noodles, arrange in bowl.",
+            "Top with beef, pour hot broth.",
+            "Add sprouts, herbs, lime."
+          ]
+        },
+        lasagna: {
+          name: "Italian Lasagna",
+          author: "Gianna Rossi",
+          image: "assets/images/Lasagna.jpg",
+          desc: "Layered pasta with meat, tomato sauce, and cheese.",
+          ingredients: [
+            "Lasagna noodles",
+            "400g ground beef",
+            "2 cups tomato sauce",
+            "200g ricotta cheese",
+            "200g mozzarella cheese",
+            "50g parmesan"
+          ],
+          steps: [
+            "Brown beef; add tomato sauce, simmer.",
+            "Layer noodles, meat, cheeses.",
+            "Repeat layers; finish with cheese.",
+            "Bake at 180°C 35 min. Rest, then serve."
+          ]
+        },
+        ratatouille: {
+          name: "Ratatouille",
+          author: "Remy Boucher",
+          image: "assets/images/Ratatouille.jpg",
+          desc: "French vegetable medley baked with herbs.",
+          ingredients: [
+            "1 eggplant, sliced",
+            "2 zucchini, sliced",
+            "2 tomatoes, sliced",
+            "1 yellow bell pepper",
+            "Olive oil, herbes de Provence"
+          ],
+          steps: [
+            "Layer vegetables in baking dish.",
+            "Drizzle olive oil, sprinkle herbs.",
+            "Bake at 175°C for 40 min.",
+            "Serve warm."
+          ]
+        },
+        empanadas: {
+          name: "Empanadas",
+          author: "Carlos Ortega",
+          image: "assets/images/Empanadas.jpg",
+          desc: "Stuffed pastry pockets popular in Spanish cuisine.",
+          ingredients: [
+            "Empanada dough rounds",
+            "200g ground beef or chicken",
+            "1 onion, diced",
+            "2 tbsp olives, chopped",
+            "1 egg, beaten"
+          ],
+          steps: [
+            "Cook meat and onions, add olives.",
+            "Fill dough rounds, fold & seal.",
+            "Brush tops with egg.",
+            "Bake at 180°C for 25 min."
+          ]
+        },
+        gulabjamun: {
+          name: "Gulab Jamun",
+          author: "Priya Sharma",
+          image: "assets/images/GulabJamun.jpg",
+          desc: "Indian sweet balls soaked in fragrant syrup.",
+          ingredients: [
+            "1 cup milk powder",
+            "2 tbsp flour",
+            "2 tbsp ghee",
+            "1 cup sugar, 1 cup water",
+            "1/2 tsp cardamom, rose water"
+          ],
+          steps: [
+            "Combine milk powder, flour, ghee.",
+            "Shape into balls, deep fry.",
+            "Boil sugar, water, cardamom for syrup.",
+            "Soak balls in syrup. Add rose water."
+          ]
+        },
+        baguette: {
+          name: "French Baguette",
+          author: "Pierre Martin",
+          image: "assets/images/Baguette.jpeg",
+          desc: "Classic long French bread with golden crust.",
+          ingredients: [
+            "500g bread flour",
+            "1.5 tsp yeast",
+            "300ml water",
+            "1.5 tsp salt"
+          ],
+          steps: [
+            "Mix flour, yeast, salt, water; knead.",
+            "Shape into long baguettes.",
+            "Proof 1hr; score tops.",
+            "Bake at 220°C 25 min. Cool before slicing."
+          ]
+        }
+      };
+
+      function getQueryParam(param) {
+        let params = new URLSearchParams(window.location.search);
+        return params.get(param);
+      }
+      const id = getQueryParam("id");
+      const data = recipes[id] || recipes["padthai"];
+      document.getElementById("recipe-details").innerHTML = `
+        <div class="details-card">
+          <div class="details-header">${data.name}</div>
+          <img src="${data.image}" alt="${data.name}" class="details-img">
+          <div class="details-author"><strong>By:</strong> ${data.author}</div>
+          <div class="details-desc">${data.desc}</div>
+          <div class="details-section-title">Ingredients:</div>
+          <ul class="details-list">${data.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
+          <div class="details-section-title">Instructions:</div>
+          <ol class="details-steps">${data.steps.map(s => `<li>${s}</li>`).join("")}</ol>
+        </div>
+      `;
+    </script>
+  </main>
+  <footer>
+    <p>&copy; 2025 RecipePlatform</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Recipes | Recipe Platform</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .manage-section {max-width: 900px; margin: 2.5em auto; background: #fff; border-radius: 19px; box-shadow: 0 7px 48px #e35d6a12; padding: 2.2em 2.1em;}
+    .manage-title {color:#e35d6a; font-weight:800; font-family:'Montserrat'; font-size:1.33em; margin-bottom:.94em; text-align:center;}
+    .recipe-table {width:100%; border-collapse:collapse; margin-bottom:2em;}
+    .recipe-table th, .recipe-table td {border:1px solid #ffe0ed; padding:0.75em 1em;}
+    .recipe-table th {background:#ffe7f1; color:#bb2477; font-weight:700;}
+    .recipe-table tr:nth-child(even) {background: #fff7fa;}
+    .action-btn {background:#e35d6a;color:#fff;padding:0.4em 1.3em; border-radius: 8px; font-weight:600; border:none; margin: 0 .4em; cursor:pointer;transition:background 0.14s;}
+    .action-btn:hover {background:#bb2477;}
+    .back-btn {margin:0.7em 0 1.1em 2.1em;}
+    @media (max-width:600px){.recipe-table th,.recipe-table td{padding:0.38em 0.3em;}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><i class="fa fa-bowl-food"></i> RecipePlatform</div>
+      <ul class="nav-links">
+        <li class="nav-box"><a href="admin.html"><i class="fa-solid fa-user-gear"></i> Admin</a></li>
+        <li class="nav-box"><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li class="nav-box"><a href="index.jsp"><i class="fa-solid fa-house"></i> Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <a href="admin.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <section class="manage-section">
+      <div class="manage-title"><i class="fa-solid fa-utensils"></i> Manage Recipes</div>
+      <table class="recipe-table">
+        <thead>
+          <tr>
+            <th>Recipe ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample rows -->
+          <tr>
+            <td>101</td>
+            <td>Classic Sushi Rolls</td>
+            <td>Alice Chef</td>
+            <td>Published</td>
+            <td>
+              <button class="action-btn">Approve</button>
+              <button class="action-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>102</td>
+            <td>Pad Thai</td>
+            <td>Bob User</td>
+            <td>Draft</td>
+            <td>
+              <button class="action-btn">Approve</button>
+              <button class="action-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="color:#904b69;">List and moderate platform recipes here. Integrate backend logic for real moderation.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 RecipePlatform</p>
+  </footer>
+</body>
+</html>

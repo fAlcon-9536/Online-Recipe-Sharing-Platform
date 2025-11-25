@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browse Recipes | RecipePlatform</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .recipes-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin: 2em auto 3em auto;
+      max-width: 1200px;
+    }
+    .recipe-card {
+      width: 170px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(227,93,106,0.14);
+      padding-bottom: 1em;
+      margin-bottom: 1.9em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.17s, transform 0.15s;
+    }
+    .recipe-card img {
+      width: 170px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-top: 1em;
+      margin-bottom: .7em;
+      box-shadow: 0 1px 7px #e35d6a14;
+      border-bottom: 1px solid #f7daed;
+      background: #fff;
+      transition: transform .17s;
+    }
+    .recipe-card:hover {
+      box-shadow: 0 8px 30px #e35d6a1a;
+      transform: scale(1.04);
+    }
+    .recipe-card:hover img {
+      transform: scale(1.03);
+    }
+    .card-title {
+      margin-bottom: 0.47em;
+      font-weight: 700;
+      color: #c42b5c;
+      font-size: 1.03em;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      letter-spacing: 0.13px;
+    }
+    @media (max-width: 700px) {
+      .recipes-row {
+        gap: 1em;
+      }
+      .recipe-card, .recipe-card img {
+        width: 98vw;
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><i class="fa fa-bowl-food"></i> RecipePlatform</div>
+      <ul class="nav-links">
+        <li class="nav-box"><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li class="nav-box"><a href="index.jsp"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="nav-box"><a href="submit_recipe.html"><i class="fa-solid fa-plus"></i> Add Recipe</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <a href="javascript:window.history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <div class="recipes-title" style="text-align:center;">All Recipes</div>
+    <div class="recipes-row">
+      <div class="recipe-card">
+        <img src="assets/images/Sushi.jpg" alt="Classic Sushi Rolls">
+        <div class="card-title">Classic Sushi Rolls</div>
+        <a href="recipe_details.html?id=sushi" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Pad Thai.JPG" alt="Pad Thai">
+        <div class="card-title">Pad Thai</div>
+        <a href="recipe_details.html?id=padthai" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/ChickenTikkaMasala.jpeg" alt="Chicken Tikka Masala">
+        <div class="card-title">Chicken Tikka Masala</div>
+        <a href="recipe_details.html?id=tikka" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Pizza.jpg" alt="Classic Pizza">
+        <div class="card-title">Margherita Pizza</div>
+        <a href="recipe_details.html?id=pizza" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/BanhMi.jpg" alt="Banh Mi">
+        <div class="card-title">Banh Mi Sandwich</div>
+        <a href="recipe_details.html?id=banhmi" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Ramen.jpg" alt="Japanese Ramen">
+        <div class="card-title">Japanese Ramen</div>
+        <a href="recipe_details.html?id=ramen" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Pho.jpg" alt="Pho">
+        <div class="card-title">Vietnamese Pho</div>
+        <a href="recipe_details.html?id=pho" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Lasagna.jpg" alt="Lasagna">
+        <div class="card-title">Italian Lasagna</div>
+        <a href="recipe_details.html?id=lasagna" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Ratatouille.jpg" alt="Ratatouille">
+        <div class="card-title">Ratatouille</div>
+        <a href="recipe_details.html?id=ratatouille" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Empanadas.jpg" alt="Empanadas">
+        <div class="card-title">Empanadas</div>
+        <a href="recipe_details.html?id=empanadas" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/GulabJamun.jpg" alt="Gulab Jamun">
+        <div class="card-title">Gulab Jamun</div>
+        <a href="recipe_details.html?id=gulabjamun" class="btn">View Details</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/images/Baguette.jpg" alt="Baguette">
+        <div class="card-title">French Baguette</div>
+        <a href="recipe_details.html?id=baguette" class="btn">View Details</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 RecipePlatform</p>
+  </footer>
+</body>
+</html>
