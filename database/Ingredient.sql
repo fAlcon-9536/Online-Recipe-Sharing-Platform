@@ -1,0 +1,4 @@
+CREATE TABLE Ingredient (
+  ingredient_id INT AUTO_INCREMENT PRIMARY KEY,
+  label VARCHAR(100) NOT NULL UNIQUE
+);
