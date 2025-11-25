@@ -26,7 +26,7 @@ An interactive web platform built with Java Servlets and hosted on Apache Tomcat
 3. Set up Apache Tomcat 10.1 on your local machine or server.
 4. Deploy the project WAR file or configure the servlet context in Tomcat.
 5. Ensure your database is configured and connected as per the project setup.
-6. Start Tomcat server and access the application via `http://localhost:8080/yourproject`.
+6. Start Tomcat server and access the application via `http://localhost:8080/RecipePlatformApp/`.
 
 ## Usage
 
@@ -49,7 +49,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For support or inquiries, please contact: your.email@example.com
+For support or inquiries, please contact: 004.ayush30@gmail.com
 
 ---
 
