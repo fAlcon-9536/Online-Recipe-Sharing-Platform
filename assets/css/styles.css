@@ -1,0 +1,200 @@
+:root {
+  --main-pink: #e35d6a;
+  --main-pink-dark: #c64254;
+  --main-pink-light: #ffe7ed;
+  --main-pink-gradient: linear-gradient(110deg, #fff 60%, #ffe9ef 100%);
+  --hero-gradient: linear-gradient(120deg, #ffe7ed 0%, #fbedf3 70%, #fff 100%);
+  --shadow-soft: 0 7px 30px #e35d6a11;
+  --shadow-card: 0 6px 38px rgba(227,93,106,0.13), 0 1.5px 1.7px #f5cfd4;
+  --shadow-btn: 0 1px 17px rgba(227,93,106,0.12);
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  color: #222;
+  background: var(--hero-gradient);
+  min-height: 100vh;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(227,93,106,0.06);
+}
+
+/* Main Logo */
+.logo {
+  font-family: 'Pacifico', 'Montserrat', Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--main-pink);
+  display: flex;
+  align-items: center;
+  gap: 0.42em;
+}
+.logo i {
+  color: #e35d6a;
+  margin-right: 0.17em;
+  font-size: 1.2em;
+  vertical-align: -2px;
+}
+
+/* NAVIGATION */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.03em 7vw;
+  background: #fff;
+  box-shadow: 0 2px 14px #e35d6a10;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  animation: slideDown 0.7s cubic-bezier(.23,1.24,.32,1.01);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  margin: 0;
+}
+.nav-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 7px #e35d6a18;
+  padding: 0.64em 2.1em;
+  display: flex;
+  align-items: center;
+  border: 1.2px solid var(--main-pink-light);
+  transition: transform 0.16s, background 0.18s, box-shadow 0.12s, border-color 0.14s;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.15em;
+  margin: 0;
+}
+.nav-box:hover, .profile-box:focus-within {
+  transform: scale(1.05);
+  background: #fae0ef;
+  box-shadow: 0 7px 20px #e35d6a21;
+  border-color: #f7bad5;
+}
+.nav-box a, .nav-box a:visited {
+  color: #e35d6a;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.07em;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0;
+}
+.nav-box i {
+  font-size: 1.19em;
+  color: #888;
+  transition: color 0.2s, transform 0.18s;
+}
+.nav-box:hover i {
+  color: #e35d6a;
+  transform: scale(1.06);
+}
+
+/* Dropdown animation for user profile */
+.profile-box { position: relative; }
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 2.8em;
+  right: 0;
+  min-width: 155px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #c42b5c22;
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s;
+}
+.profile-box:hover .profile-dropdown,
+.profile-box:focus-within .profile-dropdown {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  animation: dropdownFade 0.28s;
+}
+@keyframes dropdownFade {
+  0% { opacity: 0; transform: translateY(-15px);}
+  100% { opacity: 1; transform: none;}
+}
+.profile-dropdown a {
+  display: block;
+  padding: 1em 1.3em;
+  color: #c42b5c;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid #ffe0ed;
+}
+.profile-dropdown a:hover {
+  background: #fae0ef;
+  color: #9e1843;
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin: 1.1em 0 0 2.6em;
+  font-size: 1.06em;
+  color: #e35d6a;
+  background: #fffafc;
+  border-radius: 9px;
+  padding: 0.52em 1.35em;
+  font-weight: 700;
+  box-shadow: 0 1px 8px #e35d6a14;
+  border: 1px solid #fae0ef;
+  transition: background 0.14s, box-shadow 0.15s, color 0.14s;
+  text-decoration: none;
+}
+.back-btn:hover {
+  background: #fae0ef;
+  color: #ab2067;
+  box-shadow: 0 4px 16px #e35d6a17;
+}
+
+/* Headings, buttons, nav: modern + bold Montserrat */
+.card-recipe-title,
+.card-title,
+.btn, .btn-cta, .submit-btn,
+.nav-box a,
+.recipes-title, h2,
+.profile-dropdown a {
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Subtext/body: clean Roboto */
+.card-recipe-desc,
+.card-link,
+.details-description,
+.details-section-title,
+.steps-list,
+.ingredients-list,
+.author,
+.card-link {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .navbar { flex-direction: column; gap: 1em; }
+  .nav-links { flex-direction: column; align-items: flex-start; gap: 18px;}
+  .back-btn { margin-left: 1.1em;}
+}
+@media (max-width: 550px) {
+  .navbar {padding:0.77em 0.19em;}
+  .logo {font-size:1.16em;}
+}
+
+/* Other content and card styles remain unchanged */
