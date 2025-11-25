@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit a Recipe | Recipe Platform</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .submit-outer {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 3em;
+      min-height: 83vh;
+    }
+    .submit-section {
+      background: #fff;
+      border-radius: 19px;
+      box-shadow: 0 7px 35px #e35d6a19;
+      max-width: 420px;
+      width: 98vw;
+      padding: 2.4em 2em 1.6em 2em;
+      margin: 0.5em auto;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.7s cubic-bezier(.21,1.11,.2,.98);
+      transition: box-shadow 0.19s, transform 0.15s;
+    }
+    .submit-section:hover { box-shadow: 0 16px 42px #e35d6a25; transform: scale(1.012);}
+    .submit-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #e35d6a;
+      font-size: 1.41em;
+      font-weight: 700;
+      margin-bottom: 1.05em;
+      letter-spacing: 0.18em;
+      display: flex;
+      gap: 0.6em;
+      align-items: center;
+      justify-content: center;
+    }
+    .submit-title lottie-player {margin-bottom: -9px;}
+    .form-group {
+      margin-bottom: 1.13em;
+      text-align: left;
+      position: relative;
+    }
+    .form-group label {
+      transition: color 0.14s;
+      color: #a45a86;
+      font-weight: 500;
+      font-size: 1em;
+      margin-left: .25em;
+      margin-bottom: .21em;
+      display: block;
+      letter-spacing: 0.09em;
+    }
+    .form-group input[type=text], .form-group input[type=email], .form-group input[type=file], .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.69em 0.85em;
+      border: 1.2px solid #ffb3db;
+      border-radius: 9px;
+      background: #fff8fa;
+      font-size: 1em;
+      font-family: 'Roboto', Arial, sans-serif;
+      outline: none;
+      margin-top: 0.1em;
+      transition: border-color 0.19s, box-shadow 0.15s;
+    }
+    .form-group input[type=text]:focus,
+    .form-group textarea:focus,
+    .form-group input[type=email]:focus,
+    .form-group select:focus {
+      border-color: #e35d6a;
+      box-shadow: 0 1.5px 10px #f8bdea42;
+    }
+    .form-group textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+    .add-row-area {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 0.33em;
+    }
+    .add-btn {
+      background: #e35d6a;
+      border: none;
+      color: #fff;
+      padding: 0.37em 1em 0.37em 1em;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 3px;
+      box-shadow: 0 1.5px 8px #e35d6a13;
+      font-size: 1.05em;
+      transition: background 0.13s, box-shadow 0.14s, transform 0.17s;
+    }
+    .add-btn:hover {
+      background: #ab2067;
+      transform: scale(1.06);
+    }
+    .submit-btn-row {
+      text-align: center;
+      margin-top: 1.3em;
+    }
+    .submit-btn {
+      background: linear-gradient(90deg,#e35d6a,#fc90ae);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.09em;
+      padding: 0.85em 2.5em;
+      border-radius: 2em;
+      cursor: pointer;
+      letter-spacing: .7px;
+      box-shadow: 0 2px 14px #e35d6a13;
+      transition: background 0.15s, transform 0.16s, box-shadow 0.17s;
+    }
+    .submit-btn:hover {background:#e35d6a; transform:scale(1.04);}
+    .back-btn {
+      margin: 1.3em auto 0 0.7em;
+      display: inline-block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(34px);}
+      to   { opacity: 1; transform: none;}
+    }
+    @media (max-width: 600px) {
+      .submit-section {padding: 1.2em 0.3em;}
+      .submit-title {font-size: 1.09em;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><i class="fa fa-bowl-food"></i> RecipePlatform</div>
+      <ul class="nav-links">
+        <li class="nav-box"><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li class="nav-box"><a href="index.jsp"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="nav-box"><a href="submit_recipe.html"><i class="fa-solid fa-plus"></i> Add Recipe</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <a href="javascript:window.history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <div class="submit-outer">
+      <section class="submit-section">
+        <div class="submit-title">
+          <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_l9d4681b.json"
+            background="transparent" speed="1.1" style="width:40px;height:40px;vertical-align:middle;" loop autoplay></lottie-player>
+          Submit a New Recipe
+        </div>
+        <form id="recipeForm" action="/RecipePlatformApp/recipe" method="POST" enctype="multipart/form-data" autocomplete="off">
+          <div class="form-group">
+            <label for="title">Recipe Title</label>
+            <input type="text" id="title" name="title" required placeholder="Recipe name">
+          </div>
+          <div class="form-group">
+            <label for="photo">Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" required maxlength="80" placeholder="Short description">
+          </div>
+          <div class="form-group">
+            <label for="instructions">Instructions</label>
+            <textarea id="instructions" name="instructions" required placeholder="Step-by-step instructions"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Ingredients</label>
+            <div id="ingredients-list">
+              <div class="add-row-area">
+                <input type="text" name="ingredient_name" placeholder="Ingredient" required style="flex:1;">
+                <input type="text" name="ingredient_amt" placeholder="Amount (e.g. 200g)" required style="width:95px;">
+                <input type="text" name="ingredient_unit" placeholder="Unit" style="width:70px;">
+                <button type="button" class="add-btn" onclick="addIngredientRow()">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select class="status-select" id="status" name="status" required>
+              <option value="">Select status</option>
+              <option value="Published">Published</option>
+              <option value="Draft">Draft</option>
+              <option value="Archived">Archived</option>
+            </select>
+          </div>
+          <div class="submit-btn-row">
+            <button type="submit" class="submit-btn">Submit Recipe</button>
+          </div>
+          <input type="hidden" name="action" value="submit">
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 RecipePlatform</p>
+  </footer>
+  <script>
+    function addIngredientRow() {
+      const ingredientsList = document.getElementById('ingredients-list');
+      const div = document.createElement('div');
+      div.className = 'add-row-area';
+      div.innerHTML = `
+        <input type="text" name="ingredient_name" placeholder="Ingredient" required style="flex:1;">
+        <input type="text" name="ingredient_amt" placeholder="Amount (e.g. 200g)" required style="width:95px;">
+        <input type="text" name="ingredient_unit" placeholder="Unit" style="width:70px;">
+        <button type="button" class="add-btn" onclick="this.parentElement.remove()">-</button>
+      `;
+      ingredientsList.appendChild(div);
+    }
+  </script>
+</body>
+</html>
