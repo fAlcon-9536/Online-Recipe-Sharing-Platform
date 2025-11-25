@@ -71,7 +71,21 @@ An interactive web application built using Java Servlets and hosted on Apache To
 - Adjust Tomcat user roles in the `tomcat-users.xml` file to enable Manager access.
 - For production environments, consider additional security setups and performance tuning.
 
-## Installation (Quick Setup)
+
+## Usage
+
+- Access the site via browser at your Tomcat server URL.
+- Register or log in as a user or admin.
+- Admins can manage content and users through their dashboard.
+- Users can share, discover, rate, and comment on recipes freely.
+
+## Contributing
+
+- Fork the repository and create your feature branch.
+- Commit your changes with descriptive messages.
+- Submit pull requests for review and merging.
+- Report issues for bugs or feature requests.
+
 
 
 ## License
