@@ -2,46 +2,77 @@
 The platform will enable users to share their recipes, search and discover new recipes, and interact with other users through ratings and comments. Administrators will oversee user activities, manage recipe content, and maintain system settings.
 # Online Recipe Sharing Platform
 
-An interactive web platform built with Java Servlets and hosted on Apache Tomcat 10.1 that allows users to share, discover, rate, and comment on recipes. Administrators can manage users, recipes, and system settings through dedicated dashboards.
+An interactive web application built using Java Servlets and hosted on Apache Tomcat 10.1. This platform enables users to share, discover, rate, and comment on recipes while providing administrators comprehensive control over user and content management through dedicated dashboards.
 
 ## Features
 
-- User roles: Admin and User with specific dashboards and functionalities
-- Admin functionalities:
-  - User Management (create, update, delete users)
-  - Recipe Management (approve/reject recipes)
-  - System Settings configuration
-  - Recipe statistics and user activity monitoring
-- User functionalities:
-  - Share and manage personal recipes with photos
-  - Search and discover recipes
-  - Rate and comment on recipes
-  - Manage personal profile details
-- Real-time updates and interactions
+### User Types and Capabilities
 
-## Installation and Setup
+- **Admin**
+  - Manage user accounts: create, update, delete users.
+  - Approve or reject user-submitted recipes.
+  - Configure system-wide settings.
+  - Monitor recipe statistics (submission trends, ratings, comments).
+  - Real-time user activity monitoring.
 
-1. Clone the repository:
-2. Import the project into your Java IDE (e.g., Eclipse, VS Code).
-3. Set up Apache Tomcat 10.1 on your local machine or server.
-4. Deploy the project WAR file or configure the servlet context in Tomcat.
-5. Ensure your database is configured and connected as per the project setup.
-6. Start Tomcat server and access the application via `http://localhost:8080/RecipePlatformApp/`.
+- **User**
+  - Share new recipes with detailed info and photos.
+  - Search and filter to discover recipes.
+  - Rate and comment on recipes.
+  - Manage personal profile and update details.
+  - View and manage own recipe sharing history.
 
-## Usage
+### Dashboards
 
-- Access the platform in your web browser after Tomcat deployment.
-- Admins log in to access user and recipe management dashboards.
-- Users log in to share, discover, rate, and comment on recipes.
-- Use search and filter options to find recipes.
-- Profile and recipe management available in user dashboard.
+- **Admin Dashboard**
+  - User Management table with add/edit/delete options.
+  - Recipe Management with approval/rejection controls.
+  - System Settings panel.
+  - Interactive graphs for recipe and user analytics.
+  - Live user activity feed.
 
-## Contributing
+- **User Dashboard**
+  - My Recipes list with edit/delete capabilities.
+  - Recipe discovery interface with search and filter.
+  - Ratings and comments management.
+  - Profile management form.
+  - Recipe sharing history and status overview.
 
-- Fork the repository and create a feature branch.
-- Make your changes with clear commit messages.
-- Submit a pull request for review.
-- Report issues or suggest features via the issue tracker.
+## Deployment on Apache Tomcat 10.1
+
+### Prerequisites
+
+- Java Development Kit (JDK) installed and `JAVA_HOME` environment variable set.
+- Apache Tomcat 10.1 installed on the server or local machine.
+- Database configured and accessible by the web application.
+
+### Deployment Steps
+
+1. **Build your project** into a WAR (Web Application Archive) file, e.g., `recipe-platform.war`.
+2. **Start Apache Tomcat**:
+   - Run the `startup.bat` (Windows) or `startup.sh` (Linux/macOS) script located in the Tomcat `bin` directory.
+3. **Deploy the WAR file**:
+   - Copy the WAR file to the `webapps` folder inside the Tomcat installation directory.
+   - Alternatively, use the Tomcat Manager web application:
+     - Access `http://localhost:8080/manager/html` in your browser.
+     - Log in with admin credentials configured in `tomcat-users.xml`.
+     - Use the "Deploy" section to upload your WAR file or deploy from the server path.
+4. **Access your application**:
+   - Navigate to `http://localhost:8080/recipe-platform` (or your WAR file context path) in your web browser.
+5. **Monitor Logs and Status**:
+   - Check Tomcat logs in the `logs` directory for deployment success and runtime status.
+6. **Stopping and Restarting Tomcat**
+   - Use `shutdown.bat` or `shutdown.sh` to stop.
+   - Use `startup.bat` or `startup.sh` to restart Tomcat.
+
+### Configuration Notes
+
+- Ensure proper JDBC database connection strings and credentials are set in your application’s configuration files.
+- Adjust Tomcat user roles in the `tomcat-users.xml` file to enable Manager access.
+- For production environments, consider additional security setups and performance tuning.
+
+## Installation (Quick Setup)
+
 
 ## License
 
